@@ -1,0 +1,107 @@
+% Package providing macros and environments for LaTeX course materials
+% at the Department of Computer Science, University of Toronto.
+% Copyright 2013-2017, David Liu
+% Version 1.3, Jan 2, 2017
+
+% Edited by Supanat Wangsutthitham
+
+% Package name
+\ProvidesPackage{style}
+
+% Dependencies
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}  % Required for "does not divide" symbol
+
+% Imports
+\usepackage{enumitem, verbatim}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsfonts, amstext, amsthm, mathtools, bm}
+\usepackage{multicol, multirow, rotating, float, comment, listings}
+\usepackage[parfill]{parskip}  % This is for no indent paragraph
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage{forest}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{hyperref}
+
+% Semantic names for propositional connectives (and "logical True/False")
+\newcommand{\NOT}{\neg}
+\newcommand{\AND}{\wedge}
+\newcommand{\OR}{\vee}
+\newcommand{\IMP}{\Rightarrow}
+\newcommand{\IFF}{\Leftrightarrow}
+\newcommand{\TRUE}{\text{True}}
+\newcommand{\FALSE}{\text{False}}
+\newcommand{\IN}{\,{\in}\,}
+\newcommand{\NOTIN}{\,{\notin}\,}
+
+% Semantic name for a "divides" symbol.
+\newcommand{\DIV}{\mid}
+\newcommand{\NDIV}{\nmid}
+
+% modular arithmetic
+\newcommand{\MOD}{\pmod}
+
+% Number sets
+\newcommand{\N}{\mathbb N}        % Naturals
+\newcommand{\Z}{\mathbb Z}        % Integers
+\newcommand{\Q}{\mathbb Q}        % Rationals
+\newcommand{\R}{\mathbb R}        % Reals
+\newcommand{\cO}{\mathcal O}      % Big-Oh
+\newcommand{\cP}{\mathcal P}      % Power set
+
+% Short forms for set notation
+\newcommand{\emp}{\emptyset}
+\newcommand{\bs}{\backslash}
+
+% set operators
+\newcommand{\union}{\cup}
+\newcommand{\intersect}{\cap}
+
+% Math functions
+\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}  % Floor function
+\newcommand{\ceil}[1]{\left \lceil #1 \right \rceil}     % Ceiling function
+\newcommand{\abs}[1]{\left | #1 \right |}                % Absolute value
+\newcommand{\set}[1]{\left \{ #1 \right \}}				 % Set bracket
+\DeclareMathOperator{\lcm}{lcm}                          % lcm
+
+% Macros for proofs
+\newcommand{\proofheader}[1]{\noindent \underline{\textbf{#1}}}
+\newcommand{\base}{\proofheader{Base Case}:}
+\newcommand{\istep}{\proofheader{Inductive Step}:}
+
+% Macros for psuedocode
+\algnewcommand{\LineComment}[1]{\State $\blacktriangleright$ \textit{#1}}
+\algnewcommand{\SlashComment}[1]{\hfill {\footnotesize\bf //} #1}
+
+% Color for nodes (forest package)
+\definecolor{NodeStroke}{HTML}{4D4D99}
+\definecolor{NodeFill}{HTML}{B3B3E6}
+
+% Pseudocode setups (Deprecated)
+% \lstdefinestyle{code} {
+%     basicstyle=\ttfamily\footnotesize,
+%     breakatwhitespace=false,
+%     breaklines=true,
+%     captionpos=b,
+%     keepspaces=true,
+%     numbers=left,
+%     numbersep=5pt,
+%     showspaces=false,
+%     showstringspaces=false,
+%     showtabs=false,
+%     tabsize=2
+% }
+% \lstset{style=code}
+
+% Modal Notations
+\newcommand{\mm}{\mathcal{M}}
+\newcommand{\nn}{\mathcal{N}}
+\newcommand{\kk}{\mathcal{K}}
+
+% Text Notation
+\newcommand{\quo}[1]{``#1"}
+
