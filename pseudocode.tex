@@ -1,0 +1,30 @@
+\begin{comment}
+\begin{algorithm}[H]
+	\small
+	\caption{I took this from Chandra}\label{ref_name} % \label is for reference
+	\begin{algorithmic}[1] % [n] = show line number for every n-th line
+		\Procedure{Function}{$\mathcal{Q}$}
+		\While{$\mathcal{Q} \neq \emptyset$} \SlashComment{test} % Custom Comment
+		\State{$C \leftarrow \mathcal{Q}.\textsc{Next}()$} \Comment{test} % Original Comment
+		\LineComment{Why Hello There!} % Use this for line comment
+		\For{$V \in \mathcal{V}_C$}
+		\For{$v \in \text{dom}{V}$}
+		\If{\textbf{not} $\textsc{Satisfiable}(C, V, v)$}
+		\State{$\textsc{Remove}(v, dom(V))$}
+		\If {$\text{dom}{V} = \emptyset$}
+		\State{\textbf{return} \texttt{DWO}}
+		\Else
+		\For{$C \in \mathcal{C}$}
+		\If{$V \in \mathcal{V}_C$ \textbf{ and } $C \notin \mathcal{Q}$}
+		\State{$\mathcal{Q}.\textsc{Append}(C)$}
+		\EndIf
+		\EndFor
+		\EndIf
+		\EndIf
+		\EndFor
+		\EndFor
+		\EndWhile
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+\end{comment}
