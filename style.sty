@@ -26,6 +26,7 @@
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
 \usepackage{hyperref}
+\usepackage{lmodern}
 
 % Semantic names for propositional connectives (and "logical True/False")
 \newcommand{\NOT}{\neg}
@@ -105,3 +106,11 @@
 % Text Notation
 \newcommand{\quo}[1]{``#1"}
 
+% Mathpzc
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{ <-> s*[1.2] pzcmi7t }{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\A}{\mathpzc{A}}
+
+% Philosophy Arguments
+\newcommand{\phlarg}[2]{#1 \hfill #2}
