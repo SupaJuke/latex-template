@@ -12,6 +12,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}  % Required for "does not divide" symbol
+\RequirePackage{bm}
 
 % Imports
 \usepackage{enumitem, verbatim}
@@ -64,12 +65,14 @@
 \newcommand{\intersect}{\cap}
 
 % Math functions
-\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}  % Floor function
-\newcommand{\ceil}[1]{\left \lceil #1 \right \rceil}     % Ceiling function
-\newcommand{\abs}[1]{\left | #1 \right |}                % Absolute value
-\newcommand{\set}[1]{\left \{ #1 \right \}}				 % Set bracket
-\DeclareMathOperator{\lcm}{lcm}                          % lcm
-\newcommand{\gen}[1]{\langle #1 \rangle}				 % Group/Ring generator
+\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}  	% Floor function
+\newcommand{\ceil}[1]{\left \lceil #1 \right \rceil}     	% Ceiling function
+\newcommand{\abs}[1]{\left | #1 \right |}                	% Absolute value
+\newcommand{\set}[1]{\left \{ #1 \right \}}				 	% Set bracket
+\newcommand{\setbuilder}[2]{\left \{ #1 : #2 \right \}}	 	% Set builder notation
+\DeclareMathOperator{\lcm}{lcm}                          	% lcm
+\newcommand{\gen}[1]{\langle #1 \rangle}				 	% Group/Ring generator
+\newcommand{\gal}{\text{Gal}}				 				% Galois
 
 % Macros for proofs
 \newcommand{\proofheader}[1]{\noindent \underline{\textbf{#1}}}
@@ -116,3 +119,4 @@
 
 % Philosophy Arguments
 \newcommand{\phlarg}[2]{#1 \hfill #2}
+
