@@ -8,13 +8,15 @@
 % Package name
 \ProvidesPackage{style}
 
-% Dependencies
+% =============== Dependencies =============== %
+
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}  % Required for "does not divide" symbol
 \RequirePackage{bm}
 
-% Imports
+% =============== Imports =============== %
+
 \usepackage{enumitem, verbatim}
 \usepackage[a4paper, margin=1in]{geometry}
 \usepackage[utf8]{inputenc}
@@ -28,6 +30,13 @@
 \usepackage[noend]{algpseudocode}
 \usepackage{hyperref}
 \usepackage{lmodern}
+
+% =============== Page styling =============== %
+
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+
+% ============================================ %
 
 % Semantic names for propositional connectives (and "logical True/False")
 \newcommand{\NOT}{\neg}
@@ -120,3 +129,10 @@
 % Philosophy Arguments
 \newcommand{\phlarg}[2]{#1 \hfill #2}
 
+% Macro for Solution
+\newenvironment{solution} {
+  \begin{proof}[\underline{Solution}]
+  }
+  {
+  \end{proof}
+}
