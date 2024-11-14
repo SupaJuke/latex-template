@@ -6,7 +6,7 @@
 % Edited by Supanat Wangsutthitham
 
 % Package name
-\ProvidesPackage{style}
+\ProvidesPackage{mystyle}
 
 % =============== Dependencies =============== %
 
@@ -31,10 +31,29 @@
 \usepackage{hyperref}
 \usepackage{lmodern}
 
-% =============== Page styling =============== %
+% =============== Page Layouts =============== %
 
-\pagestyle{fancy}
-\setlength{\headheight}{15pt}
+\setlength{\headheight}{20pt}
+
+% =============== Macros =============== %
+
+% === From Rico ===
+
+\newcommand{\handout}[5]{
+  \begin{center}
+    \noindent\framebox{
+      \begin{minipage}{\dimexpr\linewidth-5\fboxrule-5\fboxsep\relax}
+        \vspace{0.1em}
+        \hbox to \linewidth {\textbf{#1} \hfill Date: #2}
+        \vspace{1em}
+        \hbox to \linewidth {\hfill \LARGE #5 \hfill}
+        \vspace{1em}
+        \hbox to \linewidth {\emph{#3} \hfill #4}
+        \vspace{0.1em}
+      \end{minipage}
+    }
+  \end{center}
+}
 
 % ============================================ %
 
@@ -54,7 +73,8 @@
 \newcommand{\NDIV}{\nmid}
 
 % modular arithmetic
-\newcommand{\MOD}{\pmod}
+% \newcommand{\MOD}{\pmod}
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
 
 % Number sets
 \newcommand{\N}{\mathbb N}        % Naturals
@@ -74,14 +94,14 @@
 \newcommand{\intersect}{\cap}
 
 % Math functions
-\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}  	% Floor function
-\newcommand{\ceil}[1]{\left \lceil #1 \right \rceil}     	% Ceiling function
-\newcommand{\abs}[1]{\left | #1 \right |}                	% Absolute value
-\newcommand{\set}[1]{\left \{ #1 \right \}}				 	% Set bracket
-\newcommand{\setbuilder}[2]{\left \{ #1 : #2 \right \}}	 	% Set builder notation
-\DeclareMathOperator{\lcm}{lcm}                          	% lcm
-\newcommand{\gen}[1]{\langle #1 \rangle}				 	% Group/Ring generator
-\newcommand{\gal}{\text{Gal}}				 				% Galois
+\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}     % Floor function
+\newcommand{\ceil}[1]{\left \lceil #1 \right \rceil}        % Ceiling function
+\newcommand{\abs}[1]{\left | #1 \right |}                   % Absolute value
+\newcommand{\set}[1]{\left \{ #1 \right \}}                 % Set bracket
+\newcommand{\setbuilder}[2]{\left \{ #1 : #2 \right \}}     % Set builder notation
+\DeclareMathOperator{\lcm}{lcm}                             % lcm
+\newcommand{\gen}[1]{\langle #1 \rangle}                    % Group/Ring generator
+\newcommand{\gal}{\text{Gal}}                               % Galois
 
 % Macros for proofs
 \newcommand{\proofheader}[1]{\noindent \underline{\textbf{#1}}}
@@ -89,8 +109,10 @@
 \newcommand{\istep}{\proofheader{Inductive Step}:}
 
 % Macros for psuedocode
-\algnewcommand{\LineComment}[1]{\State $\blacktriangleright$ \textit{#1}}
+\algnewcommand{\LineComment}[1]{\State $\triangleright$ \textit{#1}}
 \algnewcommand{\SlashComment}[1]{\hfill {\footnotesize\bf //} #1}
+\algnewcommand{\Continue}{\State \textbf{continue}}
+\algnewcommand{\Break}{\State \textbf{break}}
 
 % Color for nodes (forest package)
 \definecolor{NodeStroke}{HTML}{4D4D99}
@@ -129,10 +151,15 @@
 % Philosophy Arguments
 \newcommand{\phlarg}[2]{#1 \hfill #2}
 
-% Macro for Solution
 \newenvironment{solution} {
   \begin{proof}[\underline{Solution}]
   }
   {
   \end{proof}
 }
+
+% Complexity Analysis
+\newcommand{\pr}[1]{ \text{Pr}\left[ #1 \right] }       % Probability (Pr)
+\newcommand{\opt}{ \text{OPT} }                         % Optimal
+\newcommand{\E}[1]{ \mathbb{E} \left[ #1 \right] }      % Expected Value
+\newcommand{\oh}[1]{ \mathcal{O} \left( #1 \right) }    % Big-oh notation

@@ -1,13 +1,23 @@
 \documentclass[a4paper,12pt]{article}
 
 % =============== Imports =============== %
+
 \usepackage{fancyhdr}
+\usepackage[shortlabels]{enumitem}
+\usepackage{multicol}
 
 % =============== Styling =============== %
-\usepackage{style}
 
-\lhead{Left side}
-\rhead{Supanat Wangsutthitham}
+\usepackage{mystyle}
+
+\pagestyle{fancy}
+% \fancyhf{}
+% \fancyhead[R]{Studiehandledning \date{\today}}
+% \fancyfoot[C]{\thepage}
+\lhead{
+  Supanat Wangsutthitham
+}
+
 \cfoot{\thepage}
 
 \title{Title}
@@ -18,11 +28,5 @@
 
 \begin{document}
 % \maketitle
-\section*{Section}
-
-\begin{enumerate}
-  \item a
-  \item b
-\end{enumerate}
-
+\handout{Subject}{\today}{Supanat Wangsutthitham}{Bottom Right Corner}{Assignment}
 \end{document}
