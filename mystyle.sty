@@ -118,21 +118,40 @@
 \definecolor{NodeStroke}{HTML}{4D4D99}
 \definecolor{NodeFill}{HTML}{B3B3E6}
 
-% Pseudocode setups (Deprecated)
-% \lstdefinestyle{code} {
-%     basicstyle=\ttfamily\footnotesize,
-%     breakatwhitespace=false,
-%     breaklines=true,
-%     captionpos=b,
-%     keepspaces=true,
-%     numbers=left,
-%     numbersep=5pt,
-%     showspaces=false,
-%     showstringspaces=false,
-%     showtabs=false,
-%     tabsize=2
-% }
-% \lstset{style=code}
+% ==================== For C Code ====================
+
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.85]{sourcecodepro}
+
+\usepackage{xcolor}
+\definecolor{code-green}{rgb}{0, 0.6, 0}
+\definecolor{code-gray}{rgb}{0.5, 0.5, 0.5}
+\definecolor{code-purple}{rgb}{0.58, 0, 0.82}
+\definecolor{code-bg}{rgb}{0.95, 0.95, 0.92}
+
+\lstdefinestyle{mylststyle}{
+  backgroundcolor=\color{code-bg},
+  commentstyle=\color{code-green},
+  keywordstyle=\color{magenta},
+  numberstyle=\color{code-gray},
+  stringstyle=\color{code-purple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+
+\lstset{style=mylststyle}
+
+% ====================================================
 
 % Modal Notations
 \newcommand{\mm}{\mathcal{M}}
