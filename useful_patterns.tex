@@ -13,7 +13,7 @@
 		\If{\textbf{not} $\textsc{Satisfiable}(C, V, v)$}
 		\State{$\textsc{Remove}(v, dom(V))$}
 		\If {$\text{dom}{V} = \emptyset$}
-		\State{\textbf{return} \texttt{DWO}}
+		\State{\Return \texttt{DWO}}
 		\Else
 		\For{$C \in \mathcal{C}$}
 		\If{$V \in \mathcal{V}_C$ \textbf{ and } $C \notin \mathcal{Q}$}
@@ -25,6 +25,7 @@
 		\EndFor
 		\EndFor
 		\EndWhile
+        \State{\Return xdd}
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
