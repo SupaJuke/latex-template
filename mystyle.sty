@@ -32,12 +32,18 @@
 \usepackage[noend]{algpseudocode}
 \usepackage[colorlinks = true, urlcolor = blue]{hyperref}
 \usepackage{lmodern}  % This set the font (for bold stuffs)
+\usepackage{mleftright}
 
 % For Code Blocks
 \usepackage{listings}
 \usepackage[T1]{fontenc}
 \usepackage[scaled=0.85]{sourcecodepro}
 \usepackage{xcolor}
+
+% [NOTE]: do "libertine" for PL style paper
+% \usepackage[tt=false, type1=true]{libertine}
+% \usepackage[varqu]{zi4}
+% \usepackage[libertine]{newtxmath}
 
 % =================== Page Layouts =================== %
 
@@ -98,14 +104,14 @@
 \newcommand{\intersect}{\cap}
 
 % Math functions
-\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}     % Floor function
-\newcommand{\ceil}[1]{\left \lceil #1 \right \rceil}        % Ceiling function
-\newcommand{\abs}[1]{\left | #1 \right |}                   % Absolute value
-\newcommand{\set}[1]{\left \{ #1 \right \}}                 % Set bracket
-\newcommand{\setbuilder}[2]{\left \{ #1 : #2 \right \}}     % Set builder notation
+\newcommand{\floor}[1]{\mleft \lfloor #1 \mright \rfloor}   % Floor function
+\newcommand{\ceil}[1]{\mleft \lceil #1 \mright \rceil}      % Ceiling function
+\newcommand{\abs}[1]{\mleft | #1 \mright |}                 % Absolute value
+\newcommand{\set}[1]{\mleft \{ #1 \mright \}}               % Set bracket
+\newcommand{\setbuilder}[2]{\mleft \{ #1 : #2 \mright \}}   % Set builder notation
 \DeclareMathOperator{\lcm}{lcm}                             % lcm
 \newcommand{\gen}[1]{\langle #1 \rangle}                    % Group/Ring generator
-\newcommand{\gal}{\text{Gal}}                               % Galois
+\DeclareMathOperator{\gal}{Gal}                             % Galois
 
 % Macros for proofs
 \newcommand{\proofheader}[1]{\noindent \underline{\textbf{#1}}}
@@ -136,21 +142,11 @@
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
 \newcommand{\A}{\mathpzc{A}}
 
-% Philosophy Arguments
-\newcommand{\phlarg}[2]{#1 \hfill #2}
-
-\newenvironment{solution} {
-  \begin{proof}[\underline{Solution}]
-  }
-  {
-  \end{proof}
-}
-
-% Complexity Analysis
-\newcommand{\pr}[1]{ \text{Pr}\left[ #1 \right] }       % Probability (Pr)
-\newcommand{\opt}{ \text{OPT} }                         % Optimal
-\newcommand{\E}[1]{ \mathbb{E} \left[ #1 \right] }      % Expected Value
-\newcommand{\oh}[1]{ \mathcal{O} \left( #1 \right) }    % Big-oh notation
+% Probability
+\renewcommand{\Pr}[1]{ \text{Pr} \mleft[ #1 \mright] }      % Probability (Pr)
+\DeclareMathOperator{\OPT}{OPT}                             % Optimal
+\newcommand{\E}[1]{ \mathbb{E} \mleft[ #1 \mright] }        % Expected Value
+\newcommand{\bigo}[1]{ \mathcal{O} \mleft( #1 \mright) }    % Big-oh notation
 
 % Code
 \newcommand{\code}[1]{\texttt{#1}}
